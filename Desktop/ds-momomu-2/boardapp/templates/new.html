@@ -1,0 +1,16 @@
+<!-- <style>
+    body{text-align: center;}
+</style> -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <br><h2>새글쓰기</h2><hr>
+    
+    <form action="{%url 'create'%}" method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        {{form.media}}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-secondary" onclick="location.href='{%url 'new'%}'">등록</button>
+        <!-- <button type="submit">등록</button> -->
+    </form>
+{% endblock %}
